@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;skqliao.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:true,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:-1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="2021“MINIEYE杯”中国大学生算法设计超级联赛（10）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「HDU 2021 Multi 9」[HDU 7074] Pty loves string">
+<meta property="og:url" content="https://skqliao.github.io/2021/08/22/HDU-7084/index.html">
+<meta property="og:site_name" content="Skqliao&#39;s Blog">
+<meta property="og:description" content="2021“MINIEYE杯”中国大学生算法设计超级联赛（10）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-22T14:31:52.000Z">
+<meta property="article:modified_time" content="2021-08-22T14:51:00.103Z">
+<meta property="article:author" content="Jiaqi Liao">
+<meta property="article:tag" content="主席树">
+<meta property="article:tag" content="next树">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://skqliao.github.io/2021/08/22/HDU-7084/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;skqliao.github.io&#x2F;2021&#x2F;08&#x2F;22&#x2F;HDU-7084&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;08&#x2F;22&#x2F;HDU-7084&#x2F;&quot;,&quot;title&quot;:&quot;「HDU 2021 Multi 9」[HDU 7074] Pty loves string&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>「HDU 2021 Multi 9」[HDU 7074] Pty loves string | Skqliao's Blog</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Skqliao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E9%A2%98%E6%84%8F%E3%80%8D"><span class="nav-number">1.</span> <span class="nav-text">「题意」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%8C%E9%93%BE%E6%8E%A5%E3%80%8D"><span class="nav-number">1.1.</span> <span class="nav-text">「链接」</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E5%88%86%E6%9E%90%E3%80%8D"><span class="nav-number">2.</span> <span class="nav-text">「分析」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81%E3%80%8D"><span class="nav-number">3.</span> <span class="nav-text">「参考代码」</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiaqi Liao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jiaqi Liao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:lan@skqliao.com" title="E-Mail → mailto:lan@skqliao.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2841343424&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;2841343424&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skqliao.github.io/2021/08/22/HDU-7084/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jiaqi Liao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skqliao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          「HDU 2021 Multi 9」[HDU 7074] Pty loves string
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-08-22 22:31:52 / 修改时间：22:51:00" itemprop="dateCreated datePublished" datetime="2021-08-22T22:31:52+08:00">2021-08-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HDU-%E5%A4%9A%E6%A0%A1/" itemprop="url" rel="index"><span itemprop="name">HDU 多校</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">2021“MINIEYE杯”中国大学生算法设计超级联赛（10）</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="「题意」"><a href="#「题意」" class="headerlink" title="「题意」"></a>「题意」</h2><p>给定长为 $n$ 的字符串 $s[1\cdots n]$，有 $m$ 个询问。每次给定 $x,y$，查询由 $s[1,x]$ 和 $s[n-y+1,n]$ 拼接而成的字符串在 $s$ 中的出现次数。</p>
+<p>$T\leq 5,n,m\leq 2\times 10^5$</p>
+<h3 id="「链接」"><a href="#「链接」" class="headerlink" title="「链接」"></a>「链接」</h3><p><a target="_blank" rel="noopener" href="https://acm.hdu.edu.cn/showproblem.php?pid=7084">7084</a></p>
+<h2 id="「分析」"><a href="#「分析」" class="headerlink" title="「分析」"></a>「分析」</h2><p>对于一个出现位置 $s[l,r]$ ，满足 $S[l,l + x − 1]$ 和 $s[1,x]$ 相等， $s[r − y + 1,r]$ 和 $s[n − y + 1,n]$ 相等，且 $l+x-1+1=r-y+1$。</p>
+<p>对于 $s[1,l+x-1]$ 来说，这两个相等的部分就是前后缀，这能联想到border。</p>
+<p>用KMP预处理，通过跳next，$s[l+x-1]$ 能跳到 $s[x]$。从后往前跑KMP，反着建next，$s[r-y+1]$ 能跳到 $s[n-y+1]$。</p>
+<p>因此可以建成一棵next树，$i$ 与 $next[i]$ 连边，那么符合条件的便是 $x$ 子树的所有节点。</p>
+<p>而由于 $l+x=r-y+1$，因此若两棵子树上的两个点编号差为 $1$，则它们对应的 $[l,r]$ 便是一个出现位置。</p>
+<p>问题转化为正反两棵next树，查询在正next树中 $x$ 的子树与反next树中 $n-y+1$ 的子树中，节点编号差为 $1$ 的点对数量。</p>
+<p>这可以转化为二维数点问题。</p>
+<p>具体来说，对两棵树求DFS序，并将第一棵树的DFS序映射到第二棵树上。问题便转化成求在 $[Dfn[y],Dfn[y]+Sz[y]-1]$ 的区间中，权值为 $[Dfn[x],Dfn[x]+Sz[x]-1]$ 的点个数。</p>
+<p>这可以用主席树解决。</p>
+<p>复杂度 $O(m\log{n})$。</p>
+<h2 id="「参考代码」"><a href="#「参考代码」" class="headerlink" title="「参考代码」"></a>「参考代码」</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @date:</span></span><br><span class="line"><span class="comment"> * @source:</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, ll&gt; pll;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; vi;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fir first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sec second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(), (x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)x.size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> up(i, l, r) for (int i = l; i &lt;= r; ++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dn(i, l, r) for (int i = l; i &gt;= r; --i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Trav(i, x) for (auto &amp; i : x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;class T, class G&gt; <span class="keyword">bool</span> <span class="title">chkMax</span><span class="params">(T &amp;x, G y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y &gt; x ? x = y, <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;class T, class G&gt; <span class="keyword">bool</span> <span class="title">chkMin</span><span class="params">(T &amp;x, G y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y &lt; x ? x = y, <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"><span class="keyword">int</span> Nxt[N], Nxt2[N];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tree</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = ::N;</span><br><span class="line">    vi G[N];</span><br><span class="line">    <span class="keyword">int</span> Dfn[N], Nfd[N], Sz[N], tot;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addEdge</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">        G[u].<span class="built_in">pb</span>(v);</span><br><span class="line">        G[v].<span class="built_in">pb</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">        Dfn[x] = ++tot;</span><br><span class="line">        Nfd[tot] = x;</span><br><span class="line">        Sz[x] = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">Trav</span>(v, G[x]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(v, x);</span><br><span class="line">            Sz[x] += Sz[v];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i) G[i].<span class="built_in">clear</span>();</span><br><span class="line">        tot = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; t1, t2;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PresidentTree</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = ::N * <span class="number">40</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">        <span class="keyword">int</span> ls, rs, sum;</span><br><span class="line">    &#125; A[N];</span><br><span class="line">    <span class="keyword">int</span> tot;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">newNode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        A[tot].ls = A[tot].rs = A[tot].sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> tot++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        tot = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rt = <span class="built_in">newNode</span>();</span><br><span class="line">        A[rt] = A[u];</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            A[rt].sum++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> m = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (p &lt;= m) A[rt].ls = <span class="built_in">insert</span>(A[u].ls, l, m, p);</span><br><span class="line">            <span class="keyword">else</span> A[rt].rs = <span class="built_in">insert</span>(A[u].rs, m + <span class="number">1</span>, r, p);</span><br><span class="line">            A[rt].sum = A[A[rt].ls].sum + A[A[rt].rs].sum;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (a &lt;= l &amp;&amp; r &lt;= b) <span class="keyword">return</span> A[v].sum - A[u].sum;</span><br><span class="line">        <span class="keyword">int</span> m = (l + r) &gt;&gt; <span class="number">1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (a &lt;= m) sum += <span class="built_in">query</span>(A[u].ls, A[v].ls, l, m, a, b);</span><br><span class="line">        <span class="keyword">if</span> (m &lt; b) sum += <span class="built_in">query</span>(A[u].rs, A[v].rs, m + <span class="number">1</span>, r, a, b);</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; t3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Rt[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; (s + <span class="number">1</span>);</span><br><span class="line">    Nxt[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">1</span> &amp;&amp; s[i] != s[j + <span class="number">1</span>]) j = Nxt[j];</span><br><span class="line">        <span class="keyword">if</span> (s[j + <span class="number">1</span>] == s[i]) j++;</span><br><span class="line">        Nxt[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">    Nxt2[n] = n + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>, j = n + <span class="number">1</span>; i &gt;= <span class="number">1</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &lt;= n &amp;&amp; s[i] != s[j - <span class="number">1</span>]) j = Nxt2[j];</span><br><span class="line">        <span class="keyword">if</span> (s[j - <span class="number">1</span>] == s[i]) j--;</span><br><span class="line">        Nxt2[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">    t1.<span class="built_in">init</span>(n + <span class="number">1</span>); t2.<span class="built_in">init</span>(n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        t1.<span class="built_in">addEdge</span>(i, Nxt[i]);</span><br><span class="line">        t2.<span class="built_in">addEdge</span>(i, Nxt2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    t1.<span class="built_in">dfs</span>(<span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">    t2.<span class="built_in">dfs</span>(n + <span class="number">1</span>, <span class="number">-1</span>);</span><br><span class="line">    t3.<span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i) &#123;</span><br><span class="line">        Rt[i] = t3.<span class="built_in">insert</span>(Rt[i - <span class="number">1</span>], <span class="number">1</span>, n + <span class="number">1</span>, t2.Dfn[t1.Nfd[i] + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, x, y; i &lt;= m; ++i) &#123;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        y = n - y + <span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; t3.<span class="built_in">query</span>(Rt[t1.Dfn[x] - <span class="number">1</span>], Rt[t1.Dfn[x] + t1.Sz[x] - <span class="number">1</span>], <span class="number">1</span>, n + <span class="number">1</span>, t2.Dfn[y], t2.Dfn[y] + t2.Sz[y] - <span class="number">1</span>) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">int</span> Case;</span><br><span class="line">    cin &gt;&gt; Case;</span><br><span class="line">    <span class="keyword">while</span> (Case--) <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/" rel="tag"># 主席树</a>
+              <a href="/tags/next%E6%A0%91/" rel="tag"># next树</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/22/HDU-7089/" rel="prev" title="「2021CCPC华为云挑战赛」[HDU 7089] CDN流量调度问题">
+                  <i class="fa fa-chevron-left"></i> 「2021CCPC华为云挑战赛」[HDU 7089] CDN流量调度问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiaqi Liao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.3" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script class="next-config" data-name="nprogress" type="application/json">{&quot;enable&quot;:true,&quot;spinner&quot;:true}</script>
+  <script src="/js/third-party/nprogress.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{&quot;enable&quot;:true,&quot;tags&quot;:&quot;none&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.1.2&#x2F;es5&#x2F;tex-mml-chtml.js&quot;}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
